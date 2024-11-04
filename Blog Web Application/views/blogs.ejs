@@ -1,0 +1,106 @@
+<%- include("partials/header.ejs") %>
+
+
+
+    <div class="album py-5 bg-body-tertiary">
+        <div class="container">
+            <h2 style="text-align: center;">Your Blogs</h2><br>
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 g-3">
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <% blogs.forEach(blog=> { %>
+                            <div class="card-body">
+                                <h4>
+                                    <%= blog.title %>
+                                </h4>
+                                <p class="card-text">
+                                    <%= blog.description %>
+                                </p>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="btn-group">
+                                        <a href="/blogs/<%= blog.id %>/edit"
+                                            class="btn btn-sm btn-outline-secondary">Edit</a>
+                                        <form action="/blogs/<%= blog.id %>/delete" method="POST"
+                                            style="display:inline;">
+                                            <button type="submit"
+                                                class="btn btn-sm btn-outline-secondary">Delete</button>
+                                        </form>
+                                        <!-- <button type="button" class="btn btn-sm btn-outline-secondary">Delete</button> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <% }); %>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4>Why Responsive Web Design is Essential</h4>
+                            <p class="card-text">In today’s digital world, users access websites from a variety of
+                                devices. Responsive web design ensures that your site looks and functions well on all of
+                                them, whether it’s a desktop, tablet, or smartphone.
+                                <br><br>
+                                What is Responsive Web Design?
+                                It’s a design approach that allows your website to adapt to different screen sizes and
+                                orientations. This is done using flexible grids and media queries, ensuring a seamless
+                                user experience across all devices.
+                                <br><br>
+                                Why It Matters:
+                                <br><br>
+                                User Experience: A consistent experience keeps visitors engaged, reducing bounce rates.
+                                <br>
+                                SEO Benefits: Google prioritizes mobile-friendly sites, improving your search rankings.
+                                <br>
+                                Cost-Effective: One responsive site is easier to maintain than separate versions for
+                                different devices. <br>
+                                Future-Proof: Responsive design prepares your site for new devices. <br>
+                                Start with a mobile-first approach, focusing on smaller screens first, and then scale
+                                up. Using CSS frameworks like Bootstrap can simplify the process.
+
+                                Responsive web design isn’t just a trend; it’s a necessity. It ensures your site is
+                                accessible, user-friendly, and ready for the future.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h4>Introduction to Version Control with Git</h4>
+                            <p class="card-text">What is Git? <br><br>
+                                Git is a distributed version control system that allows multiple developers to work on a
+                                project simultaneously without overwriting each other's changes. Every change is
+                                tracked, and you can revert to previous versions of your code if something goes wrong.
+                                <br><br>
+                                Why Use Git? <br><br>
+                                Collaboration: Git enables multiple developers to work on the same project without
+                                conflicts. Each developer works on a separate branch, and changes are merged when ready.
+                                <br>
+                                Tracking Changes: Git records every modification, making it easy to track who made what
+                                changes and when. This is invaluable for debugging and auditing code.
+                                <br>
+                                Backup: Git acts as a backup system for your code. If your local copy is lost, you can
+                                always retrieve the latest version from the repository.
+                                <br>
+                                Branching: Git allows developers to create branches for new features or bug fixes. This
+                                keeps the main codebase stable while experimenting with new ideas.
+                                <br><br>
+                                Getting Started with Git <br>
+                                To start using Git, you’ll need to install it on your system and create a repository for
+                                your project. Once your repository is set up, you can begin tracking changes, committing
+                                updates, and collaborating with others.
+                                <br>
+                                In summary, Git is an essential tool for any developer, offering powerful features for
+                                collaboration, version tracking, and code management. Whether you’re working solo or as
+                                part of a team, mastering Git will significantly enhance your development workflow.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

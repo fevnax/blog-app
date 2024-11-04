@@ -1,0 +1,35 @@
+<%- include("partials/header.ejs") %>
+
+    <br>
+    <div class="container d-flex justify-content-center">
+        <div class="col-lg-7 mt-5">
+            <!-- Update form action URL to point to the correct edit route -->
+            <form class="needs-validation" novalidate="" action="/blogs/<%= blog.id %>/edit" method="POST">
+                <div class="row g-3">
+                    <div class="mb-3">
+                        <label for="title" class="form-label">Title</label>
+                        <input type="text" name="form-title" class="form-control" id="exampleFormControlInput1"
+                            placeholder="Add a title" value="<%= blog.title %>" required>
+                        <div class="invalid-feedback">
+                            Valid title is required.
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea name="form-desc" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                            required><%= blog.description %></textarea>
+                        <div class="invalid-feedback">
+                            A description is required.
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br><br>
+
+    <%- include("partials/footer.ejs") %>

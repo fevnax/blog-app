@@ -5,5 +5,21 @@
 }
 
 body {
-    /* background-color: aquamarine; */
+    background-color: cadetblue;
+}
+
+#author {
+    color: rgb(158, 22, 15);
+    text-decoration: underline;
+}
+
+#home-title {
+    color: #0D6EFD;
+    font-weight: 600;
+}
+
+.fixed-foot {
+    /* display: flex; */
+    /* position: fixed; */
+    bottom: 0;
 }
